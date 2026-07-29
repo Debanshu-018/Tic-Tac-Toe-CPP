@@ -49,14 +49,14 @@ int main() {
     while (true) {
         displayBoard();
 
-        cout << "Player " << player << ", enter a position (1-9): ";
+        cout << "Player " << player << ",  enter a position (1-9): ";
         cin >> choice;
 
         int row = (choice - 1) / 3;
         int col = (choice - 1) % 3;
 
         if (choice < 1 || choice > 9 ||
-            board[row][col] == 'X' || board[row][col] == 'O') {
+            board[row][col] == 'X' || board[row][col] ==  'O') {
             cout << "Invalid move! Try again.\n";
             continue;
         }
@@ -65,7 +65,7 @@ int main() {
 
         if (checkWin()) {
             displayBoard();
-            cout << "Player " << player << " wins!\n";
+            cout << "Player " << player << "  wins!\n";
             break;
         }
 
