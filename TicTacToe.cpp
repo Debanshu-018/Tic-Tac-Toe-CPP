@@ -17,7 +17,7 @@ void displayBoard() {
     cout << "\n";
 }
 
-bool checkWin() {
+bool checkWin () {
     for (int i = 0; i < 3; i++) {
         if (board[i][0] == board[i][1] && board[i][1]  == board[i][2])
             return true;
