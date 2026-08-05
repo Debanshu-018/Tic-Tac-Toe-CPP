@@ -10,3 +10,14 @@ while start < end:
     end -= 1
 
 print("Reversed Array:", arr)
+
+# Find the smallest element in an array.
+arr = [25, 10, 45, 5, 30]
+
+smallest = arr[0]
+
+for i in arr:
+    if i < smallest:
+        smallest = i
+
+print("Smallest element:", smallest)
