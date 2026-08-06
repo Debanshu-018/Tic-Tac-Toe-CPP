@@ -27,3 +27,26 @@ def max_subarray(arr):
 
 arr = [-2,1,-3,4,-1,2,1,-5,4]
 print(max_subarray(arr))
+
+# 3. Merge Two Sorted Arrays
+def merge(arr1, arr2):
+    i = j = 0
+    result = []
+
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] < arr2[j]:
+            result.append(arr1[i])
+            i += 1
+        else:
+            result.append(arr2[j])
+            j += 1
+
+    result.extend(arr1[i:])
+    result.extend(arr2[j:])
+
+    return result
+
+arr1 = [1,3,5]
+arr2 = [2,4,6]
+
+print(merge(arr1, arr2))
