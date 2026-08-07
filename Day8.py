@@ -7,7 +7,7 @@ else:
     print("Not Palindrome")
     
 #Q2.Reverse a String
-s = input("Enter a string: ")
+ s = input("Enter a string: ")
 
 print("Reversed String:", s[::-1])
 
