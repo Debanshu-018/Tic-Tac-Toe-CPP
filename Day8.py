@@ -42,7 +42,7 @@ for word in strings[1:]:
 print("Longest Common Prefix:", prefix)
 
 #Q5.String Compression
-s = input("Enter a string: ")
+ s = input("Enter a string: ")
 
 compressed = ""
 count = 1
