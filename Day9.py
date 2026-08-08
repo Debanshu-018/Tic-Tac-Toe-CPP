@@ -123,8 +123,19 @@ def solve_n_queens(n):
 n = 4
 
 solutions = solve_n_queens(n)
-
 for solution in solutions:
     for row in solution:
         print(row)
     print()
+    
+#OUTPUT
+# .Q..
+# ...Q
+# Q...
+# ..Q.
+
+# ..Q.
+# Q...
+# ...Q
+# .Q..
+
