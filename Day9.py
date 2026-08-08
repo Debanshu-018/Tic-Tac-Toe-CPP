@@ -56,3 +56,21 @@ print(max_sliding_window(nums, k))
 height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 
 print("Trapped Water:", trap(height))
+
+# Q3.Median of Two Sorted Arrays
+def find_median(nums1, nums2):
+    nums = nums1 + nums2
+    nums.sort()
+
+    n = len(nums)
+
+    if n % 2 == 1:
+        return nums[n // 2]
+    else:
+        return (nums[n // 2 - 1] + nums[n // 2]) / 2
+
+
+nums1 = [1, 3]
+nums2 = [2]
+
+print("Median:", find_median(nums1, nums2))
