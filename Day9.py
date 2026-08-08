@@ -74,3 +74,57 @@ nums1 = [1, 3]
 nums2 = [2]
 
 print("Median:", find_median(nums1, nums2))
+
+#Q4.N-Queens
+def solve_n_queens(n):
+    board = [["."] * n for _ in range(n)]
+    solutions = []
+
+    cols = set()
+    diagonals1 = set()
+    diagonals2 = set()
+
+    def backtrack(row):
+        if row == n:
+            solution = ["".join(row) for row in board]
+            solutions.append(solution)
+            return
+
+        for col in range(n):
+
+            if col in cols:
+                continue
+
+            if row - col in diagonals1:
+                continue
+
+            if row + col in diagonals2:
+                continue
+
+            # Place queen
+            board[row][col] = "Q"
+            cols.add(col)
+            diagonals1.add(row - col)
+            diagonals2.add(row + col)
+
+            backtrack(row + 1)
+
+            # Remove queen
+            board[row][col] = "."
+            cols.remove(col)
+            diagonals1.remove(row - col)
+            diagonals2.remove(row + col)
+
+    backtrack(0)
+
+    return solutions
+
+
+n = 4
+
+solutions = solve_n_queens(n)
+
+for solution in solutions:
+    for row in solution:
+        print(row)
+    print()
