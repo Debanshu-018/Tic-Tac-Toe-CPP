@@ -206,6 +206,58 @@ solve_sudoku(board)
 for row in board:
     print(row)
 
+#Q6. Word Search
+def exist(board, word):
+
+    rows = len(board)
+    cols = len(board[0])
+
+    def dfs(row, col, index):
+
+        if index == len(word):
+            return True
+
+        if (row < 0 or row >= rows or
+            col < 0 or col >= cols or
+            board[row][col] != word[index]):
+            return False
+
+        # Mark as visited
+        temp = board[row][col]
+        board[row][col] = "#"
+
+        found = (
+            dfs(row + 1, col, index + 1) or
+            dfs(row - 1, col, index + 1) or
+            dfs(row, col + 1, index + 1) or
+            dfs(row, col - 1, index + 1)
+        )
+
+        # Restore cell
+        board[row][col] = temp
+
+        return found
+
+    for row in range(rows):
+        for col in range(cols):
+
+            if board[row][col] == word[0]:
+                if dfs(row, col, 0):
+                    return True
+
+    return False
+
+
+board = [
+    ["A", "B", "C", "E"],
+    ["S", "F", "C", "S"],
+    ["A", "D", "E", "E"]
+]
+
+word = "ABCCED"
+
+print(exist(board, word))
+
 
 
 
